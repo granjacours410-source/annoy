@@ -37,12 +37,6 @@ with codecs.open('README.rst', encoding='utf-8') as fobj:
     content = fobj.read()
     # Normalize line endings
     content = content.replace('\r\n', '\n').replace('\r', '\n')
-    # Fix split URLs in image directives - rejoin URLs that got split
-    content = re.sub(
-        r'(\.\. image::)\s*\n([^\n]+(?:\n[^\s:][^\n]*)*)',
-        lambda m: f"{m.group(1)} {m.group(2).replace(chr(10), '')}",
-        content
-    )
     # Remove blank lines between directive and options
     content = re.sub(r'(\.\. image:: [^\n]+)(\n\s*\n)+(\s+:)', r'\1\n\3', content)
     # Remove blank lines between options themselves
