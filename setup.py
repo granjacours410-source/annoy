@@ -33,7 +33,8 @@ readme_note = """\
 """
 
 with codecs.open('README.rst', encoding='utf-8') as fobj:
-    long_description = readme_note + fobj.read()
+    content = fobj.read().replace('\r\n', '\n').replace('\r', '\n')
+    long_description = readme_note + content
 
 # Various platform-dependent extras
 extra_compile_args = ['-D_CRT_SECURE_NO_WARNINGS', '-fpermissive']
@@ -73,7 +74,7 @@ if manual_linker_args:
     extra_link_args = manual_linker_args.split(',')
 
 setup(name='annoy-mm',
-      version='1.17.3-rc4',
+      version='1.17.3-rc5',
       description='Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk.',
       packages=['annoy'],
       package_data={'annoy': ['__init__.pyi', 'py.typed']},
@@ -86,6 +87,7 @@ setup(name='annoy-mm',
           )
       ],
       long_description=long_description,
+      long_description_content_type='text/x-rst',
       author='Erik Bernhardsson',
       author_email='mail@erikbern.com',
       url='https://github.com/spotify/annoy',
