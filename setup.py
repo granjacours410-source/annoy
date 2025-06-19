@@ -72,8 +72,8 @@ manual_linker_args = os.environ.get('ANNOY_LINKER_ARGS', None)
 if manual_linker_args:
     extra_link_args = manual_linker_args.split(',')
 
-setup(name='annoy',
-      version='1.17.3',
+setup(name='annoy-mm',
+      version='1.17.3-rc0',
       description='Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk.',
       packages=['annoy'],
       package_data={'annoy': ['__init__.pyi', 'py.typed']},
