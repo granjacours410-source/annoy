@@ -136,7 +136,7 @@ More info
 * Annoy is available as a `conda package <https://anaconda.org/conda-forge/python-annoy>`__ on Linux, OS X, and Windows.
 * `ann-benchmarks <https://github.com/erikbern/ann-benchmarks>`__ is a benchmark for several approximate nearest neighbor libraries. Annoy seems to be fairly competitive, especially at higher precisions:
 
-.. image:: https://github.com/erikbern/ann-benchmarks/raw/master/results/glove-100-angular.png
+.. image:: https://github.com/erikbern/ann-benchmarks/blob/main/results/glove-100-angular.png?raw=true
    :alt: ANN benchmarks
    :align: center
    :target: https://github.com/erikbern/ann-benchmarks
