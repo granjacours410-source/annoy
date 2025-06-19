@@ -45,7 +45,7 @@ with codecs.open('README.rst', encoding='utf-8') as fobj:
     )
     # Remove blank lines between directive and options
     content = re.sub(r'(\.\. image:: [^\n]+)(\n\s*\n)+(\s+:)', r'\1\n\3', content)
-    long_description = readme_note + content
+    long_description = readme_note #+ content
 
 # Various platform-dependent extras
 extra_compile_args = ['-D_CRT_SECURE_NO_WARNINGS', '-fpermissive']
