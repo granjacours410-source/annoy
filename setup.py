@@ -37,8 +37,10 @@ with codecs.open('README.rst', encoding='utf-8') as fobj:
     content = fobj.read()
     # Normalize line endings
     content = content.replace('\r\n', '\n').replace('\r', '\n')
-    # Fix RST image directives by removing blank lines between directive and options
-    content = re.sub(r'(\.\. image:: [^\n]+)\n\s*\n(\s+:[^:]+:)', r'\1\n\2', content)
+    # Windows: Fix RST image directives by removing ALL blank lines between directive and options
+    content = re.sub(r'(\.\. image:: [^\n]+)(\n\s*\n)+(\s+:[^:]+:)', r'\1\n\3', content, flags=re.MULTILINE)
+    # Windows: Fix blank lines between options
+    content = re.sub(r'(\s+:[^:]+:[^\n]*)(\n\s*\n)+(\s+:[^:]+:)', r'\1\n\3', content, flags=re.MULTILINE)
     long_description = readme_note + content
 
 # Various platform-dependent extras
@@ -79,7 +81,7 @@ if manual_linker_args:
     extra_link_args = manual_linker_args.split(',')
 
 setup(name='annoy-mm',
-      version='1.17.3-rc6',
+      version='1.17.3-rc7',
       description='Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk.',
       packages=['annoy'],
       package_data={'annoy': ['__init__.pyi', 'py.typed']},
