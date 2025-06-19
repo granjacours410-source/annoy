@@ -6,7 +6,8 @@ Annoy
 .. figure:: https://raw.github.com/spotify/annoy/master/ann.png
    :alt: Annoy example
    :align: center
-   :caption: Annoy example
+
+   Annoy example
 
 .. image:: https://github.com/spotify/annoy/actions/workflows/ci.yml/badge.svg
     :target: https://github.com/spotify/annoy/actions
@@ -141,7 +142,8 @@ More info
    :alt: ANN benchmarks
    :align: center
    :target: https://github.com/erikbern/ann-benchmarks
-   :caption: ANN benchmarks
+
+   ANN benchmarks
 
 Source code
 -----------
