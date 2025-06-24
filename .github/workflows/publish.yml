@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Handle Line Endings (Windows)
+        if: runner.os == 'Windows'
+        run: git config --global text eol=lf
 
       - name: Set up Python
         uses: actions/setup-python@v5
