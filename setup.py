@@ -35,6 +35,8 @@ readme_note = """\
 
 with codecs.open('README.rst', encoding='utf-8') as fobj:
     content = fobj.read()
+    # Normalize line endings
+    content = content.replace('\r\n', '\n').replace('\r', '\n')
     # Remove blank lines between directive and options
     content = re.sub(r'(\.\. image:: [^\n]+)(\n\s*\n)+(\s+:)', r'\1\n\3', content)
     # Remove blank lines between options themselves
