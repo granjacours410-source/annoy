@@ -16,7 +16,6 @@
 # the License.
 
 from setuptools import setup, Extension
-import codecs
 import os
 import platform
 import sys
@@ -32,9 +31,8 @@ readme_note = """\
 
 """
 
-with codecs.open('README.rst', encoding='utf-8') as fobj:
-    content = fobj.read()
-    long_description = readme_note + content
+with open('README.rst', encoding='utf-8') as fobj:
+    long_description = readme_note + fobj.read()
 
 # Various platform-dependent extras
 extra_compile_args = ['-D_CRT_SECURE_NO_WARNINGS', '-fpermissive']
