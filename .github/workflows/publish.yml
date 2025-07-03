@@ -23,10 +23,6 @@ jobs:
         with:
           platforms: arm64
 
-      - name: Handle Line Endings (Windows)
-        if: runner.os == 'Windows'
-        run: git config --global core.autocrlf false
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
