@@ -25,7 +25,7 @@ jobs:
 
       - name: Handle Line Endings (Windows)
         if: runner.os == 'Windows'
-        run: git config --global text eol=lf
+        run: git config --global core.autocrlf false
 
       - name: Set up Python
         uses: actions/setup-python@v5
